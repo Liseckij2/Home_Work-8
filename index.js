@@ -1,11 +1,13 @@
-function fib(n) {
-  let a = 1;
-  let b = 1;
-  for (let i = 3; i <= n; i++) {
-    let c = a + b;
-    a = b;
-    b = c;
+
+const sequenceSum = (begin, end) => {
+
+  if (begin > end) {
+    return NaN;
   }
-  return console.log(b);
-}
-fib(6);//8
+  if (begin === end) {
+    return begin;
+  }
+  return begin + sequenceSum(begin + 1, end);
+
+};
+sequenceSum (2, 10);
